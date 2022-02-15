@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Prikaz podataka</title>
+</head>
+<body>
+
+<table>
+    <thead>
+<tr>
+<th>ID</th>
+<th>Ime</th>
+<th>Prezime</th>
+<th>Telefon</th>
+<th>Mail</th>
+<th>Adresa</th>
+<th>Izmeni</th>
+<th>Obrisi</th>
+
+</tr>
+</thead>
+<tbody>
+  <?php 
+  
+  
+  
+session_start();
+$podaci=$_SESSION["podaci"];
+
+foreach ($podaci as $row)
+{
+
+     echo 
+      "<tr>
+        <td>" . $row["id"] . "</td>
+        <td>" . $row['ime'] . "</td>
+        <td>" . $row['prezime'] .  "</td>
+        <td>" . $row['telefon'] .  "</td>
+        <td>" . $row['email'] .  "</td>
+        <td>" . $row['adresa'] .  "</td>
+        <td><form action='../update_podataka.php' method='get'><input value=".$row["id"]." name='id' hidden><button>Izmeni</button></form></td>
+        <td><form action='../brisanje_podataka.php' method='post'><input value=".$row["id"]." name='id' hidden><button>Obrisi</button></form></td>
+      </tr>";
+    }
+   ?>
+
+</tbody>
+</table>
+
+
+
+
+
+
+
+</body>
+</html>

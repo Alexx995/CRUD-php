@@ -1,0 +1,50 @@
+<html>
+<title> Update podataka</title>
+<body>
+
+
+    <?php
+
+    session_start();
+
+
+    ?>
+
+    <form action='../obrada_updajtovanih_podataka.php' method = 'get'>
+
+        <input type="number" name="id" hidden value="<?php echo $_SESSION['id'] ?>"> <br>
+        
+        Ime<br>
+        <input type="text" name="imer" value="<?php echo $_SESSION['ime'] ?>"><br>
+        
+        Prezime<br>
+        <input type="text" name="prezimer" value="<?php echo $_SESSION['prezime'] ?>" ><br>
+        
+        Telefon<br>
+        <input type="text" name="telefonr" value="<?php echo $_SESSION['telefon'] ?>" ><br>
+        
+        Mail<br>
+        <input type="text" name="mailr" value="<?php echo $_SESSION['email'] ?>" ><br>
+        
+        Adresa<br>
+        <input type="text" name="adresar" value="<?php echo $_SESSION['adresa'] ?>" ><br>
+        
+        <br>
+        
+        <input type="submit"  value="prosledi podatke">
+        
+        
+        </form>
+
+        <br>
+   
+
+<br><br>
+
+
+
+
+
+</body>
+
+</html>
